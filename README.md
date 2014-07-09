@@ -1,89 +1,66 @@
-Syllabus Help
+Introduction
 
-Exploratory Data Analysis
-Roger D. Peng
+This assignment uses data from the UC Irvine Machine Learning Repository, a popular repository for machine learning datasets. In particular, we will be using the “Individual household electric power consumption Data Set” which I have made available on the course web site:
 
-Course Description
-This course covers the essential exploratory techniques for summarizing data. These techniques are typically applied before formal modeling commences and can help inform the development of more complex statistical models. Exploratory techniques are also important for eliminating or sharpening potential hypotheses about the world that can be addressed by the data. We will cover in detail the plotting systems in R as well as some of the basic principles of constructing data graphics. We will also cover some of the common multivariate statistical techniques used to visualize high-dimensional data.
+Dataset: Electric power consumption [20Mb]
 
-Course Content
-Making exploratory graphs
-Principles of analytic graphics
-Plotting systems and graphics devices in R
-The base, lattice, and ggplot2 plotting systems in R
-Clustering methods
-Dimension reduction techniques
-Lecture Materials
-Lecture videos will be released weekly and will be available for the week and thereafter. You are welcome to view them at your convenience. Accompanying each video lecture will be a PDF copy of the slides and a link to an HTML5 version of the slides.
+Description: Measurements of electric power consumption in one household with a one-minute sampling rate over a period of almost 4 years. Different electrical quantities and some sub-metering values are available.
 
-Assessments
-Quizzes
-There will be two quizzes. The quizzes will open on the first day of the course. Quiz 1 is due at the end of the first week, and Quiz 2 is due at the end of the second week. Please refer to the individual Quizzes to see the exact date and time that each Quiz is due. Quizzes are accessed by clicking the Quizzes link in the left navigation bar.
+The following descriptions of the 9 variables in the dataset are taken from the UCI web site:
 
-Course Projects
-The two course projects will be assessed via peer assessment. In these projects, you will be asked to construct or reproduce certain plots, the purpose of which is to make you familiar with various plotting options. You will be evaluated on the plot that you produce and the code that you write to construct the plot. Course projects evaluated via peer assessment will make use of your GitHub account. Course Projects are accessed by clicking the Course Projects link in the left navigation bar.
+Date: Date in format dd/mm/yyyy
+Time: time in format hh:mm:ss
+Global_active_power: household global minute-averaged active power (in kilowatt)
+Global_reactive_power: household global minute-averaged reactive power (in kilowatt)
+Voltage: minute-averaged voltage (in volt)
+Global_intensity: household global minute-averaged current intensity (in ampere)
+Sub_metering_1: energy sub-metering No. 1 (in watt-hour of active energy). It corresponds to the kitchen, containing mainly a dishwasher, an oven and a microwave (hot plates are not electric but gas powered).
+Sub_metering_2: energy sub-metering No. 2 (in watt-hour of active energy). It corresponds to the laundry room, containing a washing-machine, a tumble-drier, a refrigerator and a light.
+Sub_metering_3: energy sub-metering No. 3 (in watt-hour of active energy). It corresponds to an electric water-heater and an air-conditioner.
+Loading the data
 
-Points and Scoring
-Quiz 1: 20%
-Quiz 2: 20%
-Course Project 1: 25%
-Course Project 2: 35%
-You must earn 70% to pass the course and earn a certificate. Students who earn 90% and above will receive a certificate with Distinction.
+When loading the dataset into R, please consider the following:
 
-Background lectures
-Background lectures about the content of the course with respect to other quantitative courses, course logistics, and the R programming language are provided as reference material. It is not necessary to watch the videos to complete the course, however they may be useful for explaining background, the grading schemes used, and how to use R.
+The dataset has 2,075,259 rows and 9 columns. First calculate a rough estimate of how much memory the dataset will require in memory before reading into R. Make sure your computer has enough memory (most modern computers should be fine).
 
-Quiz Scoring
-You may attempt each quiz up to 3 times. The score of your most successful attempt will count toward your grade.
+We will only be using data from the dates 2007-02-01 and 2007-02-02. One alternative is to read the data from just those dates rather than reading in the entire dataset and subsetting to those dates.
 
-Hard deadlines and soft deadlines
-The reported due date is the soft deadline for each quiz. You may turn in quizzes up to five days after the soft deadline. The hard deadline is five days after the Quiz is due at 23:30 UTC. Each day late will incur a 10% penalty; if you use a late day, the penalty will not be applied to that day.
+You may find it useful to convert the Date and Time variables to Date/Time classes in R using the strptime() and as.Date() functions.
 
-Late Days for Quizzes
-You are permitted 5 late days for quizzes in the course. If you use a late day, your quiz grade will not be affected. Late days may not be used for Course Projects.
+Note that in this dataset missing values are coded as ?.
 
-Typos
-We are prone to a typo or two - please report them and we will try to update the notes accordingly.
-In some cases, the videos may still contain typos that have been fixed in the lecture notes. The lecture notes represent the most up-to-date version of the course material.
-Differences of opinion
-Keep in mind that currently data analysis is as much art as it is science - so we may have a difference of opinion - and that is ok! Please refrain from angry, sarcastic, or abusive comments on the message boards. Our goal is to create a supportive community that helps the learning of all students, from the most advanced to those who are just seeing this material for the first time.
+Making Plots
 
-Peer Assessment of Course Projects
-For the course projects, peer assessment is necessary to evaluate the completion of the assignments. We have created and tested rubrics for each assignment. They are not perfect and will not be perfectly applied. However, we believe that the feedback from peer assessment adds value above simple multiple choice assessments.
+Our overall goal here is simply to examine how household energy usage varies over a 2-day period in February, 2007. Your task is to reconstruct the following plots below, all of which were constructed using the base plotting system.
 
-We have tried to make the criteria as objective as possible. Do your best to apply them to the best of your abilities.
-If you have questions or suggestions about the rubrics, please report them in the forum, "Rubric Issues".
-If you disagree with the scores you received through peer review, you may report those issues in the "Grading Issues" forum. Please note that it will be impossible for us to revise course project grades assigned via peer assessment, but we will attempt to use reports to improve future versions of the rubric.
-Plagiarism
-Johns Hopkins University defines plagiarism as "...taking for one's own use the words, ideas, concepts or data of another without proper attribution. Plagiarism includes both direct use or paraphrasing of the words, thoughts, or concepts of another without proper attribution." We take plagiarism very seriously, as does Johns Hopkins University.
+First you will need to fork and clone the following GitHub repository: https://github.com/rdpeng/ExData_Plotting1
 
-We recognize that many students may not have a clear understanding of what plagiarism is or why it is wrong. Please see the following guide for more information on plagiarism:
+For each plot you should
 
-http://www.jhsph.edu/academics/degree-programs/master-of-public-health/current-students/JHSPH-ReferencingHandbook.pdf
+Construct the plot and save it to a PNG file with a width of 480 pixels and a height of 480 pixels.
 
-It is critically important that you give people/sources credit when you use their words or ideas. If you do not give proper credit -- particularly when quoting directly from a source -- you violate the trust of your fellow students.
+Name each of the plot files as plot1.png, plot2.png, etc.
 
-The Coursera Honor code includes an explicit statement about plagiarism:
+Create a separate R code file (plot1.R, plot2.R, etc.) that constructs the corresponding plot, i.e. code in plot1.R constructs the plot1.png plot. Your code file should include code for reading the data so that the plot can be fully reproduced. You should also include the code that creates the PNG file.
 
-I will register for only one account. My answers to homework, quizzes and exams will be my own work (except for assignments that explicitly permit collaboration). I will not make solutions to homework, quizzes or exams available to anyone else. This includes both solutions written by me, as well as any official solutions provided by the course staff. I will not engage in any other activities that will dishonestly improve my results or dishonestly improve/hurt the results of others.
+Add the PNG file and R code file to your git repository
 
-Reporting plagiarism on course projects
-One of the criteria in the project rubric focuses on plagiarism. Keep in mind that some components of the projects will be very similar across terms and so answers that appear similar may be honest coincidences. However, we would appreciate if you do a basic check for obvious plagiarism and report it during your peer assessment phase.
+When you are finished with the assignment, push your git repository to GitHub so that the GitHub version of your repository is up to date. There should be four PNG files and four R code files.
 
-It is currently very difficult to prove or disprove a charge of plagiarism in the MOOC peer assessment setting. We are not in a position to evaluate whether or not a submission actually constitutes plagiarism, and we will not be able to entertain appeals or to alter any grades that have been assigned through the peer evaluation system.
+The four plots that you will need to construct are shown below.
 
-But if you take the time to report suspected plagiarism, this will help us to understand the extent of the problem and work with Coursera to address critical issues with the current system.
+Plot 1
 
-Technical Information
-Regardless of your platform (Windows or Mac) you will need a high-speed Internet connection in order to watch the videos on the Coursera web site. It is possible to download the video files and watch them on your computer rather than stream them from Coursera and this may be preferable for some of you.
+plot of chunk unnamed-chunk-2
 
-Here is some platform-specific information:
-Windows
+Plot 2
 
-The Coursera web site seems to work best with either the Chrome or the Firefox web browsers. In particular, you may run into trouble if you use Internet Explorer. The Chrome and Firefox browsers can be downloaded from:
+plot of chunk unnamed-chunk-3
 
-Chrome: http://www.google.com/chrome
-Firefox: http://www.mozilla.org
-Mac
+Plot 3
 
-The Coursera site appears to work well with Safari, Chrome, or Firefox, so any of these browsers should be fine.
+plot of chunk unnamed-chunk-4
+
+Plot 4
+
+plot of chunk unnamed-chunk-5
